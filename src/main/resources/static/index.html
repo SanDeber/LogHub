@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="topbar">
+        <div>
+            <h1>LogHub</h1>
+            <p>Sistema de monitoreo y gestión de logs</p>
+        </div>
+
+        <div class="topbar-buttons">
+            <button class="btn-primary">Nueva Aplicación</button>
+            <button class="btn-secondary">Registrar Log</button>
+        </div>
+    </header>
+
+    <section class="stats">
+
+        <div class="card">
+            <p>Aplicaciones</p>
+            <h2 id="totalApps">0</h2>
+        </div>
+        
+        <div class="card">
+            <p>Logs Totales</p>
+            <h2 id="totalLogs">0</h2>
+        </div>
+        
+        <div class="card">
+            <p>Errores</p>
+            <h2 id="totalErrors" class="red">0</h2>
+        </div>
+        
+        <div class="card">
+            <p>Críticos</p>
+            <h2 id="totalCritical" class="purple">0</h2>
+        </div>
+    </section>
+
+    <section class="logs-section">
+
+        <div class="logs-header">
+            <h2>Logs Recientes</h2>
+
+            <div class="filters">
+                <input type="text" placeholder="Buscar logs...">
+
+                <select>
+                    <option>Todos</option>
+                    <option>INFO</option>
+                    <option>WARNING</option>
+                    <option>ERROR</option>
+                    <option>CRITICAL</option>
+                </select>
+            </div>
+        </div>
+
+        <table>
+
+            <thead>
+            <tr>
+                <th>Aplicación</th>
+                <th>Nivel</th>
+                <th>Mensaje</th>
+                <th>Fecha</th>
+            </tr>
+            </thead>
+
+            <tbody id="logsTable">
+            </tbody>
+        </table>
+        <div id="apiKeyBox" class="api-key-box"></div>
+
+    </section>
+
+    <section class="bottom-grid">
+
+        <div class="form-card">
+
+            <h2>Registrar Aplicación</h2>
+
+            <form id="appForm">
+
+                <input type="text" placeholder="Nombre de la aplicación">
+
+                <input type="email" placeholder="Email del responsable">
+
+                <textarea placeholder="Descripción"></textarea>
+
+                <button type="submit" class="btn-primary full">
+                    Guardar Aplicación
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="info-card">
+
+            <h2>Información del Sistema</h2>
+
+            <div class="info-item">
+                <div>
+                    <p>Base de Datos</p>
+                    <h3>PostgreSQL</h3>
+                </div>
+
+                <span class="status green">Online</span>
+            </div>
+
+            <div class="info-item">
+                <div>
+                    <p>API REST</p>
+                    <h3>Spring Boot</h3>
+                </div>
+
+                <span class="status green">Running</span>
+            </div>
+
+            <div class="info-item">
+                <div>
+                    <p>Seguridad</p>
+                    <h3>API Key Validation</h3>
+                </div>
+
+                <span class="status blue">Active</span>
+            </div>
+
+            <div class="info-item">
+                <div>
+                    <p>Swagger</p>
+                    <h3>OpenAPI Docs</h3>
+                </div>
+
+                <span class="status green">Enabled</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>
